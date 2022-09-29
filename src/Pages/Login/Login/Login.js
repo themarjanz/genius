@@ -8,6 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -63,7 +64,7 @@ const Login = () => {
 
     }
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='container w-50 mx-auto col-sm-12 col-md-12 col-lg-12'>
             <h2 className='text-primary text-center  mt-2'>Please Login!!!</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -85,6 +86,9 @@ const Login = () => {
             <p>New to Genius Car? <Link to="/register" className='text-primary text-decoration-none' onClick={navigateRegister}>Please Register</Link></p>
 
             <p>Forget Password? <button className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+            <Helmet>
+                <title>Login -Genius Car Service</title>
+            </Helmet>
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>
